@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartShade - Register</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to SmartShade</h1>
+        <p>Please enter your username to proceed:</p>
+        <input type="text" id="username" placeholder="Enter username" required>
+        <button onclick="saveUsername()">Submit</button>
+    </div>
+
+    <script>
+        function saveUsername() {
+            const username = document.getElementById('username').value.trim();
+            console.log(username);
+            if (username) {
+                localStorage.setItem('username', username); // Save to localStorage
+                window.location.href = 'dashboard.html'; // Redirect to next page
+            } else {
+                alert('Please enter a username!');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
